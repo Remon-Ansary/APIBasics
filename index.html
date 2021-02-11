@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <h1 id="rainbow" > </h1>
+ <button  onclick="catchRainbow()" id="catch">catch</button>
+  <script>
+
+
+    const catchBtn =document.getElementById('catch');
+    const rain= document.getElementById('rainbow');
+
+    //  catchRainbow()
+    //  .then(response=>{
+    //      console.log('done');
+    //  })
+
+    //  .catch(error=>{
+    //      console.log('error');
+    //  });
+
+
+
+
+    //fetch in link api
+
+    // function catchRainbow(){ 
+    //     fetch('https://random.dog/woof.json')
+    //     .then(response=>response.json())
+    //     .then(blob=>{
+    //         console.log(blob);
+    //         rain.innerHTML = `<img width="480px" src=${blob.url} alt="dog" />`;
+            
+    //     });
+    // }
+
+    //async in link api
+
+    async function catchRainbow(){
+        const response = await fetch('https://randomfox.ca/floof/');
+        const blob = await response.json();
+        console.log(blob);
+        rain.innerHTML = `<img width="480px" src=${blob.image} alt="dog" />`;
+        
+    }
+
+
+
+
+    // async function catchRainbow(){
+    //     const response = await fetch('me.jpg');
+    //     const blob = await response.blob();
+     
+    //     document.getElementById('rainbow').src=URL.createObjectURL(blob)
+    // }
+
+
+
+
+        // fetch('me.jpg')
+        // .then(response=>response.blob())
+        // .then(blob=>{
+        //     document.getElementById('raindbow').src=URL.createObjectURL(blob);
+        // })
+          
+        // .catch(error=>{
+        //     console.log('error');
+            
+        // });
+        
+    </script>
+</body>
+
+
+</html>
